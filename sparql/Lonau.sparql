@@ -1,0 +1,22 @@
+SELECT ?time ?population ?populationW ?populationM
+WHERE {
+  wd:Q1868848 p:P1082 [
+    ps:P1082 ?population;
+    pq:P585 ?time
+  ].
+  
+  OPTIONAL {
+    wd:Q1868848 p:P1082 [
+      pq:P1539 ?populationW;
+      pq:P585 ?time
+    ].
+  }
+  
+  OPTIONAL {
+    wd:Q1868848 p:P1082 [
+      pq:P1540 ?populationM;
+      pq:P585 ?time
+    ].
+  }
+}
+ORDER BY ?time
